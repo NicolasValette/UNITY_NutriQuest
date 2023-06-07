@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine;
 
 
-public class UIHandler : MonoBehaviour
+public class DisplayEnergy : MonoBehaviour
 {
     [SerializeField]
     private GameObject _playerEnergy;
@@ -20,18 +20,18 @@ public class UIHandler : MonoBehaviour
         _energyText.text = $"Energy : {_energy.Value}";
         if (_energy != null)
         {
-            _energy.OnValueChange += DisplayEnergy;
+            _energy.OnValueChange += Display;
         }
     }
     private void OnEnable()
     {
         if (_energy != null)
         {
-            _energy.OnValueChange += DisplayEnergy;
+            _energy.OnValueChange += Display;
         }
     }
 
-    public void DisplayEnergy(int energy)
+    public void Display(int energy)
     {
         _energyText.text = $"Energy : {energy}";
     }
