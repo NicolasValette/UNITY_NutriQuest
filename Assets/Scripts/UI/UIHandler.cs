@@ -1,25 +1,33 @@
+using NutriQuest.Interfaces;
 using NutriQuest.Player;
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+
 
 public class UIHandler : MonoBehaviour
 {
     [SerializeField]
-    private PlayerEnergy _playerEnergy;
+    private GameObject _playerEnergy;
     [SerializeField]
     private TMP_Text _energyText;
 
+    private IObservable<int> _energy;
+
     private void Start()
     {
-        _energyText.text = $"Energy : {_playerEnergy.Energy}";
+        _energy = _playerEnergy.GetComponent<IObservable<int>>();
+        _energyText.text = $"Energy : {_energy.Value}";
+        if (_energy != null)
+        {
+            _energy.OnValueChange += DisplayEnergy;
+        }
     }
     private void OnEnable()
     {
-        if (_playerEnergy != null)
+        if (_energy != null)
         {
-            _playerEnergy.OnEnergyChange += DisplayEnergy;
+            _energy.OnValueChange += DisplayEnergy;
         }
     }
 

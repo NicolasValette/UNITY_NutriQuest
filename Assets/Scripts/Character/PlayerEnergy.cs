@@ -19,11 +19,16 @@ namespace NutriQuest.Player
             }
         }
 
+        public int Value => _energy;
         //public event Action<int> OnEnergyChange;
         public event Action<int> OnValueChange;
 
         //public event Action<int> OnEnergyUpdate { add { OnEnergyChange += value; } remove { } }
 
+        private void Awake()
+        {
+            Energy = _energy;
+        }
         public void LooseEnergy(int value)
         {
             Debug.Log($"Player energy ({Energy}) loose {value} energy : ");

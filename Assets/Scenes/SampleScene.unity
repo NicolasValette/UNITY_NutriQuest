@@ -899,7 +899,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54dda6684315228448477ff0df48fb64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerEnergy: {fileID: 1666414861}
+  _playerEnergy: {fileID: 1666414859}
   _energyText: {fileID: 1815897998}
 --- !u!4 &1291218217
 Transform:
@@ -997,18 +997,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _transformToFollow: {fileID: 1778628259}
   _speed: 2
---- !u!114 &1666414861 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1666414861, guid: 3eb4f8520149c66498bc3c1d2cb5093f,
+--- !u!1 &1666414859 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1666414859, guid: 3eb4f8520149c66498bc3c1d2cb5093f,
     type: 3}
   m_PrefabInstance: {fileID: 7982533422571386808}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5036022e8c7f333488a169cd5f52f83d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1778628259 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7982533422202437915, guid: 3eb4f8520149c66498bc3c1d2cb5093f,
