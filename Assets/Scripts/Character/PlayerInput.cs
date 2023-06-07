@@ -35,11 +35,12 @@ namespace NutriQuest.Character
         public void OnFire()
         {
             Debug.Log("OnFire");
-            _jumpProvider.Jump();
+            
         }
         private void OnJump()
         {
             Debug.Log("OnJump");
+            _jumpProvider.Jump();
         }
     }
 }
