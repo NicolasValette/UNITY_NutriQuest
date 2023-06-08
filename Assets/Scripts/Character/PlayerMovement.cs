@@ -7,7 +7,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
-public class PlayerMovement : MonoBehaviour, IMove, IJump
+public class PlayerMovement : MonoBehaviour, IMove, IJump, IKnockback
 {
     [SerializeField]
     private PlayerData _playerData;
@@ -89,4 +89,9 @@ public class PlayerMovement : MonoBehaviour, IMove, IJump
 
     }
 
+    public void Knockback(float knockBackForce)
+    {
+        Debug.Log("knockback");
+        _rb.AddForce(-_rb.velocity.normalized * knockBackForce, ForceMode.Impulse);
+    }
 }

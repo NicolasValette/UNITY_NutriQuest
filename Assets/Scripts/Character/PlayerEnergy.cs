@@ -7,7 +7,7 @@ using static UnityEngine.Rendering.DebugUI;
 
 namespace NutriQuest.Player
 {
-    public class PlayerEnergy : MonoBehaviour, IAddEnergy, ILooseEnergy, Interfaces.IObservable<int>
+    public class PlayerEnergy : MonoBehaviour, ITakeDamage, IAddEnergy, ILooseEnergy, Interfaces.IObservable<int>
     {
         [SerializeField]
         private PlayerData _playerData;
@@ -41,6 +41,12 @@ namespace NutriQuest.Player
         {
             Debug.Log($"Player energy ({Energy}) add {value} energy : ");
             Energy += value;
+        }
+
+        public void TakeDamage(int value)
+        {
+            Debug.Log($"Player energy ({Energy}) take {value} damage : ");
+            Energy -= value;
         }
     }
 }
