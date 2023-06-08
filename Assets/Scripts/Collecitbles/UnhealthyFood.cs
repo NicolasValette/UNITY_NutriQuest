@@ -9,19 +9,27 @@ namespace NutriQuest.Collectibles
 {
     public class UnhealthyFood : Food
     {
-
-        private void OnCollisionEnter(Collision collision)
+        public override void OnCollect(GameObject player)
         {
-            Debug.Log("OnCollisionEnter");
-            if (collision.gameObject.CompareTag("Player"))
+            ILooseEnergy looseEnergy = player.GetComponentInChildren<ILooseEnergy>();
+            if (looseEnergy != null)
             {
-                ILooseEnergy looseEnergy = collision.gameObject.GetComponentInChildren<ILooseEnergy>();
-                if (looseEnergy != null )
-                {
-                    looseEnergy.LooseEnergy(value);
-                }
-                Destroy(gameObject);
+                looseEnergy.LooseEnergy(value);
             }
+            Destroy(gameObject);
         }
+        //private void OnCollisionEnter(Collision collision)
+        //{
+        //    Debug.Log("OnCollisionEnter");
+        //    if (collision.gameObject.CompareTag("Player"))
+        //    {
+        //        ILooseEnergy looseEnergy = collision.gameObject.GetComponentInChildren<ILooseEnergy>();
+        //        if (looseEnergy != null )
+        //        {
+        //            looseEnergy.LooseEnergy(value);
+        //        }
+        //        Destroy(gameObject);
+        //    }
+        //}
     }
 }

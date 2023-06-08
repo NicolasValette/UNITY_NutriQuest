@@ -1,3 +1,4 @@
+using NutriQuest.Datas;
 using NutriQuest.Interfaces;
 using System;
 using UnityEngine;
@@ -9,17 +10,19 @@ namespace NutriQuest.Player
     public class PlayerEnergy : MonoBehaviour, IAddEnergy, ILooseEnergy, Interfaces.IObservable<int>
     {
         [SerializeField]
-        private int _energy = 100;
+        private PlayerData _playerData;
+
+        private int _currentEnergy;
         public int Energy { 
-            get => _energy;
+            get => _currentEnergy;
             private set
             {
-                _energy = value;
-                OnValueChange?.Invoke(_energy);
+                _currentEnergy = value;
+                OnValueChange?.Invoke(_currentEnergy);
             }
         }
 
-        public int Value => _energy;
+        public int Value => _currentEnergy;
         //public event Action<int> OnEnergyChange;
         public event Action<int> OnValueChange;
 
@@ -27,7 +30,7 @@ namespace NutriQuest.Player
 
         private void Awake()
         {
-            Energy = _energy;
+            Energy = _playerData.Energy;
         }
         public void LooseEnergy(int value)
         {
