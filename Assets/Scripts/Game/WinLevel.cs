@@ -14,7 +14,6 @@ public class WinLevel : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             OnWinLevel?.Invoke();
-
         }
     }
   
