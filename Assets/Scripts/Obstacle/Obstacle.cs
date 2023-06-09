@@ -28,7 +28,8 @@ namespace NutriQuest.Obstacles
                 { 
                     Knockback kbEffect = new Knockback(collision.rigidbody, knockbackForce);
                     effect.ApplyEffect(kbEffect);
-                    InvulnerabilityFrames invu = new InvulnerabilityFrames(5f, collision.gameObject, StartCoroutine);
+                    InvulnerabilityFrames invu = new InvulnerabilityFrames(2f, collision.gameObject, StartCoroutine);
+                    effect.ApplyEffect(invu);
                 }
             }
         }
