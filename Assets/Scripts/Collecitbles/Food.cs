@@ -1,5 +1,4 @@
 using NutriQuest.Interfaces;
-using NutriQuest.Player;
 using UnityEngine;
 
 namespace NutriQuest.Collectibles

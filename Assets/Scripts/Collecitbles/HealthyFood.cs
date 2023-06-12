@@ -1,9 +1,5 @@
 using NutriQuest.Interfaces;
-using NutriQuest.Player;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.Rendering.DebugUI;
 
 namespace NutriQuest.Collectibles
 {

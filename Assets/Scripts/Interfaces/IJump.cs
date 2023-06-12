@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 
 namespace NutriQuest.Interfaces
 {
     public interface IJump
     {
         public void Jump();
+
+        public bool IsStartJumping { get; }
     }
 }

@@ -1,8 +1,5 @@
 using NutriQuest.Interfaces;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.Rendering.DebugUI;
 
 public class PlayerCollector : MonoBehaviour
 {

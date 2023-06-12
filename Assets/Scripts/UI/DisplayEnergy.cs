@@ -1,6 +1,4 @@
 using NutriQuest.Interfaces;
-using NutriQuest.Player;
-using System.Collections;
 using TMPro;
 using UnityEngine;
 

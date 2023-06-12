@@ -2,7 +2,6 @@ using NutriQuest.Datas;
 using NutriQuest.Interfaces;
 using System;
 using UnityEngine;
-using static UnityEngine.Rendering.DebugUI;
 
 
 namespace NutriQuest.Player

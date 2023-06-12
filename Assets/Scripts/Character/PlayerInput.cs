@@ -1,6 +1,4 @@
 using NutriQuest.Interfaces;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -13,6 +11,8 @@ namespace NutriQuest.Character
 
         private IMove _moveProvider;
         private IJump _jumpProvider;
+
+        
 
         private void Awake()
         {
@@ -28,6 +28,7 @@ namespace NutriQuest.Character
 
         public void OnMove(InputValue value)
         {
+            
             Debug.Log("OnMove");
             _moveProvider.Move(value.Get<Vector2>());
         }
@@ -37,9 +38,18 @@ namespace NutriQuest.Character
             Debug.Log("OnFire");
             
         }
-        private void OnJump()
+        public void OnJump(InputValue value)
         {
-            Debug.Log("OnJump");
+            //if (value.isPressed)
+            //{
+            //    _startingJumpTime = Time.time;
+            //}
+            //else
+            //{
+            //    _jumpTime = Time.time - _startingJumpTime;
+            //    Debug.Log($"Time of the Jump : {_jumpTime}");
+            //}
+            Debug.Log($"OnJump : {value.isPressed}");
             _jumpProvider.Jump();
         }
     }

@@ -9,15 +9,17 @@ namespace NutriQuest.Datas
         [SerializeField]
         private int _energy;
         [SerializeField]
-        private float _speed = 5f;
+        private float _speed = 3f;
         [SerializeField]
-        private float _acceleration = 0.05f;
+        private float _acceleration = 0.15f;
+       
         [SerializeField]
-        private float _jumpForce = 50f;
+        private float _jumpButtonTime = 0.5f;
 
         public int Energy => _energy;
         public float Speed => _speed;
         public float Acceleration => _acceleration;
-        public float JumpForce => _jumpForce;
+  
+        public float JumpButtonTime => _jumpButtonTime;
     }
 }

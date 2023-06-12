@@ -1,7 +1,5 @@
 using NutriQuest.Character.Effects;
 using NutriQuest.Interfaces;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerEffect : MonoBehaviour, IApplyEffect
