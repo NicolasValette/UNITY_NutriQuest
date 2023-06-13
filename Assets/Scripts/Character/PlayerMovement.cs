@@ -32,6 +32,7 @@ namespace NutriQuest.Character
         private float _jumpingTime = 0f;
         private bool _isJumping;
         private bool _isJumpActive;
+        private float _fallingMultiplier = 1f;
         public bool IsStartJumping => _isStartJumping;
 
         // Start is called before the first frame update
@@ -66,11 +67,11 @@ namespace NutriQuest.Character
 
             if (_rb.velocity.y >= 0)
             {
-                _rb.AddForce((_jumpData.GravityScale) * _rb.mass * Physics.gravity);
+                _rb.AddForce((_jumpData.GravityScale) * _rb.mass * _fallingMultiplier * Physics.gravity);
             }
             else if (_rb.velocity.y < 0)
             {
-                _rb.AddForce((_jumpData.FallingGravityScale) * _rb.mass * Physics.gravity);
+                _rb.AddForce((_jumpData.FallingGravityScale) * _rb.mass * _fallingMultiplier * Physics.gravity);
             }
 
             if (_jumpingTime > _playerData.JumpButtonTime)
@@ -132,6 +133,10 @@ namespace NutriQuest.Character
             _rb.AddForce(-_rb.velocity.normalized * knockBackForce, ForceMode.Impulse);
         }
 
-
+        public void FallFaster()
+        {
+            _fallingMultiplier = (_fallingMultiplier % 2) + 1f;
+            Debug.Log($"Falling mult = {_fallingMultiplier}");
+        }
     }
 }

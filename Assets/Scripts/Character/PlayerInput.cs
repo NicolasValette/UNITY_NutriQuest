@@ -29,8 +29,14 @@ namespace NutriQuest.Character
         public void OnMove(InputValue value)
         {
             
-            Debug.Log("OnMove");
-            _moveProvider.Move(value.Get<Vector2>());
+            Vector2 inputValue = value.Get<Vector2>();
+            Debug.Log("OnMove" + inputValue);
+            _moveProvider.Move(inputValue);
+            if (inputValue.y < 0)                       // if we press the down button
+            {
+                _jumpProvider.FallFaster();
+                Debug.Log("Bas");
+            }
         }
 
         public void OnFire()
